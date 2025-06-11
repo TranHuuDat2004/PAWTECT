@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="/assets/js/include.js"></script>
+    <script src="/assets/js/sidebar.js"></script>
+</head>
+    <title>Pawtect UI</title>
+</head>
+<body onload="includeHTML(function() { document.dispatchEvent(new Event('DOMContentLoaded')); })">
+  <div data-include="../components/sidebar_admin.html"></div>
+  <div data-include="../components/header_admin.html"></div>
+
+    <section class="hero">
+        <img src="assets/images/Anh_Meo.jpg" alt="Cute animal" />
+        <div class="join-cta">
+            <h2>Tham gia cộng đồng PAWTECT ngay!</h2>
+            <a href="#" class="cta-button">Tham gia ngay!</a>
+        </div>
+    </section>
+
+    <section class="menu">
+        <h3>DANH MỤC</h3>
+        <div class="button-group">
+            <a href="#" class="menu-button">BÁO CÁO CỨU HỘ</a>
+            <a href="#" class="menu-button">TÌM BẠN ĐỒNG HÀNH</a>
+            <a href="#" class="menu-button">KẾT NỐI VỚI THÚ Y</a>
+            <a href="#" class="menu-button">KHÁM PHÁ PREMIUM</a>
+        </div>
+    </section>
+
+    <section class="nearby-animals">
+        <h3>CA CỨU HỘ GẦN TÔI</h3>
+        <div class="animal-card">
+            <img src="assets/images/Anh_Cho.jpg" alt="Animal 1">
+            <p>#109</p>
+            <a href="#" class="cta-button">Xem ngay!</a>
+        </div>
+        <div class="animal-card">
+            <img src="assets/images/Anh_Cho.jpg" alt="Animal 2">
+            <p>#109</p>
+            <a href="#" class="cta-button">Xem ngay!</a>
+        </div>
+    </section>
+
+    <section class="recommended">
+        <h3>CÓ THỂ BẠN QUAN TÂM</h3>
+        <div class="recommendation">
+            <img src="assets/images/Anh_Cho.jpg"" alt="Pet Zone">
+            <p>THÚ Y PET ZONE</p>
+            <a href="#" class="cta-button">Tham gia ngay!</a>
+        </div>
+    </section>
+
+    <section class="partners">
+        <h3>ĐƠN VỊ ĐỒNG HÀNH</h3>
+        <div class="partner-logo">
+            <img src="assets/images/logo-placeholder.png" alt="Partner 1">
+            <img src="assets/images/logo-placeholder.png" alt="Partner 2">
+            <img src="assets/images/logo-placeholder.png" alt="Partner 3">
+        </div>
+    </section>
+</body>
+</html>

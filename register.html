@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <img src="assets/images/logo.png" alt="Pawtect Logo" class="logo">
+        <h3>Đăng kí</h3>
+        <p>Đăng kí thông tin cá nhân của bạn</p>
+        <div id="error-message" class="error" style="display: none;"></div>
+        <form action="/register" method="POST">
+            <div class="input-group">
+                <input type="text" id="username" name="username" placeholder="Tên tài khoản" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder="Email tài khoản" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+            </div>
+            <button class="submit" type="submit">Đăng kí</button>
+        </form>
+        <p class="option">Đã có tài khoản? <a href="login.html"> Đăng nhập ngay!</a></p>
+    </div>
+    <script src="js/register.js"></script>
+</body>
+</html> 

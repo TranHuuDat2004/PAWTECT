@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>Báo cáo vị trí - Pawtect</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img class="logo" src="assets/images/header_logo.png" alt="PAWTECT Logo">
+            <div class="user-greeting">
+                Chào buổi sáng,
+                <span class="username" id="username">Khách</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Báo cáo ca cứu hộ</h1>
+        <h2>Nhập vị trí của bạn tại đây</h2>
+        
+        <form id="reportForm" action="/submitReport" method="POST" enctype="multipart/form-data">
+            <label for="location">Nhập địa chỉ tại đây:</label>
+            <input type="text" id="location" name="location" required placeholder="Nhập địa chỉ của bạn">
+
+            <p>Cung cấp cho chúng tôi chứng cứ hình ảnh về thú cưng cần hỗ trợ để chúng tôi tiếp nhận và xử lý.</p>
+            
+            <label for="imageUpload">Tải ảnh tại đây:</label>
+            <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+
+            <label for="description">Mô tả:</label>
+            <textarea id="description" name="description" rows="4" placeholder="Mô tả tình huống..." required></textarea>
+
+            <button type="submit">Báo cáo cứu hộ ngay</button>
+        </form>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="reports.html">Tin báo</a></li>
+                <li><a href="contribute.html">Đóng góp</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="assets/js/report-location.js"></script>
+</body>
+</html> 

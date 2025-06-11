@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>Đăng nhập</title>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="assets/images/logo.png" alt="PAWTECT Logo">
+        <h3>Đăng nhập</h3>
+        <p>Điền tên tài khoản và mật khẩu</p>
+        <div id="error-message" class="error" style="display: none;"></div>
+
+        <form id="loginForm" action="/login" method="POST">
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input type="email" name="email" placeholder="Tài khoản email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Mật khẩu" required>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Ghi nhớ đăng nhập</label>
+            </div>
+            <button class="submit" type="submit">Đăng nhập</button>
+        </form>
+        <p class="option">Chưa có tài khoản? <a href="register.html"> Đăng kí ngay!</a></p>
+        <!-- <p class="admin-note">Demo Admin: username: admin@gmail.com, password: admin</p> -->
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html> 

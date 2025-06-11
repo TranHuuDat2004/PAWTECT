@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #00AEEF;
+    --light-blue: #E0F7FF;
+    --text-color: #333;
+    --bg-color: #F8F9FA;
+    --white-color: #FFFFFF;
+    --border-color: #DEE2E6;
+    --sidebar-width: 280px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* --- 1. THANH MENU TRƯỢT (SIDEBAR) --- */
+/* Chỉ áp dụng cho thẻ NAV */
+nav.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white-color);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+nav.sidebar.active {
+    transform: translateX(0);
+    color:#00AEDD;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header h3 {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+nav.sidebar ul {
+    list-style: none;
+}
+
+nav.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+nav.sidebar ul li a:hover {
+    background-color: #f1f1f1;
+}
+
+nav.sidebar ul li a.active {
+    background-color: var(--light-blue);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+nav.sidebar ul li a i {
+    width: 20px;
+    text-align: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* --- 2. HEADER CHÍNH --- */
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-left: 20px;
+}
+
+.logo img {
+    height: 30px;
+}
+
+
+/* --- 3. KHUNG CHỨA NỘI DUNG DASHBOARD --- */
+.dashboard-container {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+/* Cột bên trái chứa filter và chart */
+.left-column {
+    flex: 0 0 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Cột bên phải chứa danh sách Case */
+.main-content {
+    flex: 1;
+}
+
+/* Các tiêu đề h2 */
+.left-column h2,
+.main-content h2 {
+    text-align: center;
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Các bộ lọc */
+.time-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-group button {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--white-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-group button:hover {
+    background-color: var(--light-blue);
+    border-color: var(--primary-color);
+}
+
+.filter-group button.active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+}
+
+.specific-filters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.specific-filters button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.specific-filters button span {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.specific-filters button:not(:has(span)) {
+    padding: 12px 15px;
+}
+
+/* Biểu đồ */
+.chart-section {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.donut-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary-color) 0% 80%, var(--light-blue) 80% 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-center {
+    width: 150px;
+    height: 150px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-center strong {
+    font-size: 40px;
+}
+
+.chart-center span {
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.legend-item .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.legend-item .dot.pending {
+    background-color: var(--primary-color);
+}
+
+.legend-item .dot.received {
+    background-color: var(--white-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* Danh sách Case */
+.case-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.case-card {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 174, 239, 0.3);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.card-header i {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.card-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+
+/* --- TRANG QUỸ ĐÓNG GÓP --- */
+.container.single-column {
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.top-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.page-title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dropdown-filter {
+    color: #6c757d;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdown-filter i {
+    margin-left: 5px;
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.transaction-card {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 20px 25px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 174, 239, 0.2);
+}
+
+.transaction-card .info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.transaction-card .info p {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.transaction-card .amount {
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+
+
+
+
+/* --- TRANG ĐƠN NHẬN NUÔI --- */
+
+.application-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.application-card {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    /* Căn các item lên trên cùng */
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0, 174, 239, 0.2);
+}
+
+.application-card .pet-image {
+    flex-shrink: 0;
+    /* Ngăn ảnh bị co lại */
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* Đảm bảo ảnh nằm gọn trong border-radius */
+}
+
+.application-card .pet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Giúp ảnh không bị méo */
+}
+
+.application-card .pet-info {
+    flex: 1;
+    /* Chiếm hết phần không gian còn lại */
+    display: flex;
+    flex-direction: column;
+}
+
+.application-card .pet-info h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    /* Viết hoa tên bé */
+}
+
+.application-card .pet-info .adopter-name {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.application-card .details p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 4px 0;
+    opacity: 0.9;
+}
+
+.application-card .details p strong {
+    font-weight: 700;
+}
+
+.application-card .actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.application-card .actions .btn {
+    flex: 1;
+    /* Chia đều không gian cho 2 nút */
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.application-card .actions .btn-approve {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+}
+
+.application-card .actions .btn-approve:hover {
+    background-color: #e9e9e9;
+}
+
+.application-card .actions .btn-reject {
+    background-color: transparent;
+    color: var(--white-color);
+    border: 2px solid var(--white-color);
+}
+
+.application-card .actions .btn-reject:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* --- TRANG BÀI ĐĂNG CHỜ DUYỆT --- */
+
+/* --- TRANG BÀI ĐĂNG CHỜ DUYỆT (ĐÃ CẬP NHẬT LAYOUT) --- */
+
+.approval-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.approval-card {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Quan trọng: Xếp các phần tử theo chiều dọc */
+    gap: 15px; /* Tạo khoảng cách giữa ảnh, text và nút */
+    box-shadow: 0 4px 15px rgba(0, 174, 239, 0.2);
+}
+
+.approval-card .post-thumbnail {
+    width: 100%; /* Cho ảnh/placeholder rộng hết card */
+    height: 200px; /* Chiều cao tùy chỉnh cho ảnh */
+    background-color: #e0f7ff;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+/* Nếu bạn dùng thẻ img thật, thêm style này */
+.approval-card .post-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.approval-card .post-details h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.approval-card .post-details .update-time {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.approval-card .post-details p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 4px 0;
+}
+
+/* Style cho các nút không thay đổi nhiều */
+.approval-card .actions {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.approval-card .actions .btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.approval-card .actions .btn-approve {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+}
+.approval-card .actions .btn-approve:hover {
+    background-color: #e9e9e9;
+}
+
+.approval-card .actions .btn-reject {
+    background-color: transparent;
+    color: var(--white-color);
+    border: 2px solid var(--white-color);
+}
+.approval-card .actions .btn-reject:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- RESPONSIVE CHO THIẾT BỊ DI ĐỘNG --- */
+/* Áp dụng các style này khi chiều rộng màn hình từ 768px trở xuống */
+
+@media (max-width: 768px) {
+
+    /* 1. Thêm padding cho các container chính để nội dung không dính vào cạnh */
+    header,
+    .dashboard-container,
+    .container.single-column {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 20px; /* Giảm padding trên dưới một chút */
+        padding-bottom: 20px;
+    }
+
+    /* 2. Xử lý layout 2 cột ở trang chủ: Chuyển thành 1 cột, xếp chồng lên nhau */
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .left-column {
+        flex-basis: auto; /* Bỏ độ rộng cố định của cột trái */
+    }
+
+    /* 3. Tinh chỉnh trang Đơn nhận nuôi: ảnh và thông tin xếp chồng lên nhau */
+    .application-card {
+        flex-direction: column; /* Chuyển sang layout dọc */
+        align-items: stretch; /* Kéo dài các phần tử con */
+    }
+
+    .application-card .pet-image {
+        width: 100%; /* Cho ảnh rộng hết card */
+        height: 220px; /* Có thể đặt một chiều cao cố định */
+        margin-bottom: 15px;
+    }
+
+    /* 4. Giảm kích thước một số font chữ cho gọn hơn */
+    h2 {
+        font-size: 24px;
+    }
+
+    .application-card .pet-info h3,
+    .approval-card .post-details h3 {
+        font-size: 22px;
+    }
+
+}

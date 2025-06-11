@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý thu chi - Dashboard Pawtect</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- Header và Sidebar giữ nguyên -->
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div>
+            <a href="dashboard.html" class="logo-link">
+                <div class="logo">
+                    <img src="/assets/images/logo.png" alt="Pawtect Logo">
+                    <span>Pawtect</span>
+                </div>
+            </a>
+        </div>
+    </header>
+    <nav class="sidebar" id="sidebar-nav">
+        <div class="sidebar-header">
+            <h3>Menu</h3>
+            <button class="close-btn" id="close-btn">×</button>
+        </div>
+        <ul>
+            <li><a href="pending.html"><i class="fas fa-clock"></i> Bài đăng chờ duyệt</a></li>
+            <li><a href="adoption.html"><i class="fas fa-file-alt"></i> Đơn nhận nuôi</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Số liệu thống kê</a></li>
+            <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Quản lý thu chi</a></li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="container single-column">
+        <!-- THAY ĐỔI Ở ĐÂY: Thêm data-type cho các nút -->
+        <div class="filter-group top-filters">
+            <button class="active" data-type="donation">Quỹ đóng góp</button>
+            <button data-type="ad">Quảng cáo</button>
+            <button data-type="premium">Gói Premium</button>
+        </div>
+
+        <div class="page-title-section">
+            <!-- THAY ĐỔI Ở ĐÂY: Thêm ID cho tiêu đề -->
+            <h2 id="page-title">Quỹ đóng góp</h2>
+            <div class="dropdown-filter">
+                <span>Tuần này</span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+        </div>
+
+        <!-- THAY ĐỔI Ở ĐÂY: Thêm ID và xóa các card con -->
+        <div class="transaction-list" id="transaction-list-container">
+            <!-- JavaScript sẽ điền dữ liệu vào đây -->
+        </div>
+    </main>
+
+    <!-- THAY ĐỔI Ở ĐÂY: Nhúng các file JS cần thiết -->
+    <script src="/assets/js/data-donation.js"></script>
+    <script src="/assets/js/admin.js"></script>
+    <script src="/assets/js/donation.js"></script>
+</body>
+</html>

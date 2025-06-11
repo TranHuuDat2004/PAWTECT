@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+.container h3, .container p{
+    color: #666;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+.container h3{
+    font-size: 20px;
+}
+.container p{
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+}
+
+
+
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00aaff;
+}
+
+.submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit:hover {
+    background-color: #0088cc;
+}
+
+.option {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.option a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: #ff0000;
+    margin-bottom: 1rem;
+    padding: 10px;
+    background-color: #ffe6e6;
+    border-radius: 5px;
+}
+
+.admin-note {
+    margin-top: 1rem;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-left: 5px;
+}
+
+.remember-me input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.remember-me label {
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+} 

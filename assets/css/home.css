@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #00bfff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.join-cta {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.cta-button {
+  background-color: #00bfff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.menu, .nearby-animals, .recommended, .partners {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-button {
+  background-color: #00bfff;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.animal-card {
+  display: inline-block;
+  width: 45%;
+  margin: 2.5%;
+  text-align: center;
+  background-color: #e6f7ff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.recommendation {
+  text-align: center;
+  background-color: #e6f7ff;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.partner-logo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.partner-logo img {
+  margin: 10px;
+  height: 50px; /* Adjust based on actual logo sizes */
+}
