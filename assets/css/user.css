@@ -1,0 +1,436 @@
+/* assets/css/user.css */
+
+/* Header của User */
+a {
+    text-decoration: none;
+    color: inherit;
+    /* Giữ nguyên màu chữ của thẻ a */
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-left: 20px;
+}
+
+.logo img {
+    height: 30px;
+}
+
+
+/* Header của User (ĐÃ SỬA) */
+.user-header {
+    display: flex;
+    align-items: center;
+    /* Chỉ cần căn giữa theo chiều dọc */
+    gap: 20px;
+    /* Tạo khoảng cách giữa nút menu và logo */
+    padding: 15px;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #555;
+    margin-left: auto;
+    /* Dòng code "thần thánh" đẩy phần tử này về hết bên phải */
+}
+
+/* ... các style khác của user giữ nguyên ... */
+
+.user-greeting i {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+
+/* Layout chung của trang user (ĐÃ SỬA) */
+.container-user {
+    padding: 20px 15px;
+    margin-left: auto;
+    /* Tự động căn giữa theo chiều ngang */
+    margin-right: auto;
+    /* Tự động căn giữa theo chiều ngang */
+}
+
+
+.page-header-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.page-header-user .back-arrow {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.page-header-user h2 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+/* --- TRANG KHÁM PHÁ PREMIUM --- */
+.premium-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 20px 5px;
+    scroll-snap-type: x mandatory;
+}
+
+.premium-container::-webkit-scrollbar {
+    display: none;
+}
+
+.premium-card {
+    flex: 0 0 320px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+
+.premium-card h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin: 0 0 10px 0;
+}
+
+.premium-card .price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.premium-card .description {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.premium-card .features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.premium-card .features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.premium-card .features i {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.btn-premium {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-premium:hover:not(:disabled) {
+    background-color: #008fbf;
+}
+
+.btn-premium:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* --- TRANG KẾT NỐI VỚI THÚ Y --- */
+
+.page-main-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.vet-clinic-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 15px 20px 15px;
+    scroll-snap-type: x mandatory;
+    /* Giúp slider dừng lại ở mỗi card khi cuộn */
+    -webkit-overflow-scrolling: touch;
+    /* Thêm một chút padding ở lề trái/phải của container để card đầu và cuối không dính sát lề */
+    margin: 0 -15px;
+}
+
+.vet-clinic-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.vet-clinic-card {
+    flex: 0 0 85%;
+    /* Mỗi card chiếm 85% chiều rộng màn hình */
+    max-width: 340px;
+    /* Nhưng không rộng quá 340px trên màn hình lớn */
+    background: var(--white-color);
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    scroll-snap-align: center;
+    /* Căn card vào giữa khi cuộn */
+}
+
+.clinic-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    border: 3px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.clinic-logo img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.clinic-info {
+    flex-grow: 1;
+    /* Đẩy nút và phần đánh giá xuống dưới */
+    margin-bottom: 25px;
+}
+
+.clinic-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.clinic-info p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.btn-schedule {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 25px;
+}
+
+.btn-schedule:hover {
+    background-color: #008fbf;
+}
+
+.clinic-rating h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.clinic-rating .stars {
+    color: #fadb14;
+    /* Màu vàng cho sao */
+}
+
+.clinic-rating .stars .far.fa-star {
+    color: #ccc;
+    /* Màu xám cho sao rỗng */
+}
+
+.slider-pagination {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.slider-pagination .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: all 0.3s ease;
+}
+
+.slider-pagination .dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Chỉ hiển thị các dấu chấm trên màn hình nhỏ (mobile và tablet) */
+@media (max-width: 768px) {
+    .slider-pagination {
+        display: flex;
+        /* <-- Khi màn hình nhỏ hơn 768px, hiển thị lại các dấu chấm */
+    }
+}
+
+
+/* --- TRANG CÁ NHÂN (USER PROFILE) - ĐÃ CẬP NHẬT --- */
+
+.profile-info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-bottom: 15px;
+}
+.profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.profile-location {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Container mới để căn giữa */
+.profile-main-content {
+    max-width: 1000px; /* Chiều rộng tối đa cho nội dung chính, bạn có thể chỉnh con số này */
+    margin: 0 auto;   /* Căn giữa container này */
+}
+
+/* Tab navigation (đã xóa max-width) */
+.profile-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    background-color: var(--primary-color);
+    padding: 5px;
+    border-radius: 12px;
+}
+.tab-button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.tab-button.active {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab content (đã xóa max-width) */
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+/* Card bài đăng trong tab "Bài đăng" */
+.user-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.user-post-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.user-avatar-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+.user-name { font-weight: 700; }
+.post-time { font-size: 13px; color: #888; }
+.post-image-placeholder {
+    width: 100%;
+    padding-top: 56.25%; /* Tỉ lệ 16:9 cho ảnh */
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Phần "Về tôi" */
+.about-section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.about-description {
+    background-color: var(--white-color);
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+.approval-card .post-thumbnail {
+    background-size: cover;
+    background-position: center;
+}

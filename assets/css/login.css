@@ -43,30 +43,50 @@ body {
 
 
 
+/* --- SỬA LẠI STYLE CHO FORM ĐĂNG NHẬP --- */
+
+/* Container cho mỗi dòng nhập liệu (icon + input) */
 .input-group {
-    position: relative;
-    margin-bottom: 1rem;
+    position: relative; /* Quan trọng: Tạo một không gian định vị cho icon */
+    margin-bottom: 20px;
 }
 
+/* Style cho các icon (user, lock) */
 .input-group i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
+    position: absolute; /* Đặt icon lên trên, nhưng vẫn trong không gian của .input-group */
+    left: 15px; /* Cách lề trái của ô input 15px */
+    top: 50%; /* Đặt icon ở giữa theo chiều dọc */
+    transform: translateY(-50%); /* Căn chuẩn giữa theo chiều dọc */
+    color: #999; /* Màu xám cho icon */
+    pointer-events: none; /* Giúp bạn có thể click xuyên qua icon vào ô input */
 }
 
-input {
+/* Style cho các ô input text, email, password */
+.input-group input {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 12px 20px 12px 45px; /* QUAN TRỌNG: Tăng padding bên trái lên 45px để có không gian cho icon */
+    border: 1px solid #ccc;
+    border-radius: 8px;
     font-size: 16px;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước của ô */
 }
 
-input:focus {
-    outline: none;
-    border-color: #00aaff;
+/* Style cho ô input khi được focus (click vào) */
+.input-group input:focus {
+    border-color: #00AEEF; /* Đổi màu viền sang màu xanh của thương hiệu */
+    outline: none; /* Bỏ viền xanh dương mặc định của trình duyệt */
+    box-shadow: 0 0 5px rgba(0, 174, 239, 0.5);
+}
+
+/* Style cho ô thông báo lỗi để khớp với hình ảnh */
+.error {
+    background-color: #f8d7da; /* Nền đỏ nhạt */
+    color: #721c24; /* Chữ đỏ đậm */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
 }
 
 .submit {
@@ -99,14 +119,6 @@ input:focus {
 
 .option a:hover {
     text-decoration: underline;
-}
-
-.error {
-    color: #ff0000;
-    margin-bottom: 1rem;
-    padding: 10px;
-    background-color: #ffe6e6;
-    border-radius: 5px;
 }
 
 .admin-note {

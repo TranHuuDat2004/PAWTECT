@@ -1,37 +1,55 @@
-/* document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('loginForm');
-    const errorMessage = document.getElementById('error-message');
+// assets/js/login.js
+// Logic xác thực cho trang login.html
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const email = document.querySelector('input[name="email"]').value;
-        const password = document.querySelector('input[name="password"]').value;
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+    const errorMessageDiv = document.getElementById('error-message');
 
-        // Admin authentication
-        if (email === 'admin@gmail.com' && password === 'admin') {
-            // Store admin status
-            localStorage.setItem('username', 'admin');
-            localStorage.setItem('isAdmin', 'true');
-            // Redirect to admin dashboard
-            window.location.href = 'admin/dashboard.html';
-            return;
-        }
+    if (loginForm) {
+        loginForm.addEventListener('submit', (event) => {
+            // 1. Ngăn chặn form gửi đi theo cách truyền thống
+            event.preventDefault();
 
-        // Regular user authentication
-        if (email === 'user@gmail.com' && password === 'user') {
-            // Successful login
-            errorMessage.style.display = 'none';
-            window.location.href = 'landing-page.html';
-        } else {
-            // Failed login
-            errorMessage.textContent = 'Email hoặc mật khẩu không đúng!';
-            errorMessage.style.display = 'block';
-        }
-    });
+            // Ẩn thông báo lỗi cũ (nếu có)
+            errorMessageDiv.style.display = 'none';
 
-    function showError(message) {
-        errorMessage.textContent = message;
-        errorMessage.style.display = 'block';
+            // 2. Lấy thông tin người dùng nhập vào
+            const email = loginForm.email.value;
+            const password = loginForm.password.value;
+
+            // 3. Tìm kiếm người dùng trong "database" (data-account.js)
+            const user = accountData.users.find(u => u.email === email);
+
+            // 4. Bắt đầu quá trình xác thực
+            if (!user) {
+                // Trường hợp 1: Không tìm thấy email
+                displayError('Tài khoản không tồn tại.');
+            } else if (user.password !== password) {
+                // Trường hợp 2: Sai mật khẩu
+                displayError('Mật khẩu không chính xác.');
+            } else {
+                // Trường hợp 3: Đăng nhập thành công!
+                handleSuccessfulLogin(user);
+            }
+        });
     }
-});  */
+
+    // Hàm xử lý khi đăng nhập thành công
+    function handleSuccessfulLogin(user) {
+        // 5. Kiểm tra quyền hạn (role) của người dùng
+        if (user.role === 'admin') {
+            // Nếu là admin, chuyển hướng đến trang dashboard
+            // alert('Đăng nhập quản trị viên thành công!');
+            window.location.href = '/admin/dashboard.html'; // Chuyển hướng
+        } else {
+            // Nếu là user thường, thông báo không có quyền
+            displayError('Bạn không có quyền truy cập trang quản trị.');
+        }
+    }
+
+    // Hàm hiển thị thông báo lỗi
+    function displayError(message) {
+        errorMessageDiv.textContent = message;
+        errorMessageDiv.style.display = 'block';
+    }
+});

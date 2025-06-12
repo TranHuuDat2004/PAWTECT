@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang cá nhân - Pawtect</title>
+    <!-- Nhúng các file CSS cần thiết -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+
+<body>
+    <!-- Placeholder cho sidebar của User -->
+    <div id="user-navbar-placeholder"></div>
+
+    <!-- Header dành cho User -->
+    <header class="user-header">
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div>
+            <a href="#" class="logo-link">
+                <div class="logo">
+                    <img src="/assets/images/logo.png" alt="Pawtect Logo">
+                    <span>Pawtect</span>
+                </div>
+            </a>
+        </div>
+        <div class="user-greeting">
+            <span>chào buổi sáng <strong>user!</strong></span>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+    <!-- Nội dung chính của trang -->
+    <main class="container-user">
+        <div class="page-header-user">
+            <a href="#" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
+            <h2>Trang cá nhân</h2>
+        </div>
+
+        <!-- Phần thông tin cá nhân -->
+        <section class="profile-info-section">
+            <div class="profile-avatar"></div>
+            <h2 class="profile-name">Placeholder User</h2>
+            <p class="profile-location">Thành phố, nước</p>
+        </section>
+
+        <!-- Các tab điều hướng -->
+        <div class="profile-main-content">
+            <nav class="profile-tabs">
+                <button class="tab-button active" data-tab="posts">Bài đăng</button>
+                <button class="tab-button" data-tab="about">Về tôi</button>
+            </nav>
+
+            <!-- Nội dung của các tab -->
+            <div class="tab-content active" id="posts-content">
+                <div class="user-posts-list" id="user-posts-list-container">
+                    <!-- JS sẽ chèn các bài đăng vào đây -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="about-content">
+                <h3 class="about-section-title">Mô tả về tôi</h3>
+                <div class="about-description">
+                    Blah blah blah cái gì đó tùm lum tà la tự điền ik chơi
+                </div>
+
+                <h3 class="about-section-title">Ca đã tiếp nhận</h3>
+                <div class="approval-list" id="handled-cases-container">
+                    <!-- JS sẽ chèn các case đã tiếp nhận vào đây -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Nhúng các file JS cần thiết -->
+    <script src="assets/js/data.js"></script> <!-- Dùng chung data bài đăng -->
+    <script src="assets/js/user-navbar.js"></script>
+    <script src="assets/js/user-profile.js"></script>
+</body>
+
+</html>

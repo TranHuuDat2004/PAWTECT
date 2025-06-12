@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 </head>
+
 <body>
     <!-- Header và Sidebar giữ nguyên -->
     <header>
@@ -23,19 +25,8 @@
             </a>
         </div>
     </header>
-    <nav class="sidebar" id="sidebar-nav">
-        <div class="sidebar-header">
-            <h3>Menu</h3>
-            <button class="close-btn" id="close-btn">×</button>
-        </div>
-        <ul>
-            <li><a href="pending.html"><i class="fas fa-clock"></i> Bài đăng chờ duyệt</a></li>
-            <li><a href="adoption.html"><i class="fas fa-file-alt"></i> Đơn nhận nuôi</a></li>
-            <li><a href="dashboard.html"><i class="fas fa-home"></i> Số liệu thống kê</a></li>
-            <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Quản lý thu chi</a></li>
-        </ul>
-    </nav>
-    <div class="overlay" id="overlay"></div>
+    <!-- sidebar.js -->
+    <div id="navbar-placeholder"></div>
 
     <!-- Main Content -->
     <main class="container single-column">
@@ -65,5 +56,7 @@
     <script src="/assets/js/data-donation.js"></script>
     <script src="/assets/js/admin.js"></script>
     <script src="/assets/js/donation.js"></script>
+    <script src="/assets/js/sidebar.js"></script>
 </body>
+
 </html>

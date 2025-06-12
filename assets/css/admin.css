@@ -657,3 +657,28 @@ header {
     }
 
 }
+
+/* --- STYLE CHO NÚT ĐĂNG XUẤT TRONG SIDEBAR --- */
+
+/* Biến ul thành flex container để đẩy nút logout xuống dưới */
+nav.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 61px); /* Chiều cao ul = 100% sidebar - chiều cao header của sidebar */
+}
+
+/* Đẩy mục logout xuống dưới cùng */
+.logout-item {
+    margin-top: auto;
+}
+
+/* Tạo đường kẻ ngang phía trên để tách biệt */
+.logout-item a {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Đổi màu khi hover để báo hiệu hành động nguy hiểm/quan trọng */
+.logout-item a:hover {
+    background-color: #fff1f0; /* Màu đỏ rất nhạt */
+    color: #cf1322; /* Màu đỏ đậm */
+}

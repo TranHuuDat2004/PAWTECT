@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <title>Đăng nhập</title>
 </head>
+
 <body>
     <div class="container">
         <img class="logo" src="assets/images/logo.png" alt="PAWTECT Logo">
@@ -21,6 +23,7 @@
                 <input type="email" name="email" placeholder="Tài khoản email" required>
             </div>
             <div class="input-group">
+                <i class="fa-solid fa-lock"></i> <!-- THÊM DÒNG NÀY -->
                 <input type="password" name="password" placeholder="Mật khẩu" required>
             </div>
             <div class="remember-me">
@@ -29,9 +32,13 @@
             </div>
             <button class="submit" type="submit">Đăng nhập</button>
         </form>
-        <p class="option">Chưa có tài khoản? <a href="register.html"> Đăng kí ngay!</a></p>
+        <p class="option">Chưa có tài khoản? <a style="padding-left: 10px;" href="register.html"> Đăng kí ngay!</a></p>
         <!-- <p class="admin-note">Demo Admin: username: admin@gmail.com, password: admin</p> -->
     </div>
-    <script src="js/login.js"></script>
+    <!-- Nhúng các file script cần thiết -->
+    <!-- data-account.js PHẢI được nhúng TRƯỚC login.js -->
+    <script src="assets/js/data-account.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
-</html> 
+
+</html>

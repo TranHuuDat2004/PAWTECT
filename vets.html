@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết nối với Thú Y - Pawtect</title>
+    <!-- Nhúng các file CSS cần thiết -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+
+<body>
+    <!-- Placeholder cho sidebar của User -->
+    <div id="user-navbar-placeholder"></div>
+
+    <!-- Header dành cho User -->
+    <header class="user-header">
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+            <a href="#" class="logo-link">
+                <div class="logo">
+                    <img src="/assets/images/logo.png" alt="Pawtect Logo">
+                    <span>Pawtect</span>
+                </div>
+            </a>
+        </div>
+        <div class="user-greeting">
+            <span>chào buổi sáng <strong>user!</strong></span>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+    <!-- Nội dung chính của trang -->
+    <main class="container-user">
+        <div class="page-header-user">
+            <a href="#" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
+            <h2>Kết nối với Thú Y</h2>
+        </div>
+
+        <h1 class="page-main-title">Phòng khám<br>Thú Y gần bạn</h1>
+
+        <!-- Slider chứa các phòng khám (xóa các card con) -->
+        <section class="vet-clinic-slider" id="vet-slider">
+            <!-- JavaScript sẽ tự động chèn các phòng khám vào đây -->
+        </section>
+
+        <!-- Dấu chấm điều hướng cho slider -->
+        <div class="slider-pagination" id="slider-pagination">
+            <!-- JavaScript sẽ tự động tạo các dấu chấm ở đây -->
+        </div>
+    </main>
+
+    <!-- Nhúng các file JS cần thiết -->
+    <script src="assets/js/data-vets.js"></script> <!-- FILE DỮ LIỆU MỚI -->
+    <script src="assets/js/user-navbar.js"></script>
+    <script src="assets/js/vets.js"></script>
+</body>
+</html>
+</body>
+
+</html>

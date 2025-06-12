@@ -1,141 +1,51 @@
-:root {
-    --primary-color: #00AEEF;
-    --light-blue: #E0F7FF;
-    --text-color: #333;
-    --white-color: #FFFFFF;
-    --border-color: #DEE2E6;
-    --sidebar-width: 280px;
-}
+/* assets/css/sidebar.css */
 
-/* --- SIDEBAR --- */
-nav.sidebar {
-    width: var(--sidebar-width);
+/* --- CẤU TRÚC CHUNG & SIDEBAR --- */
+.sidebar {
+    width: 280px;
     height: 100vh;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     background-color: var(--white-color);
     z-index: 1000;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 15px rgba(0,0,0,0.1);
 }
-
-nav.sidebar.active {
-    transform: translateX(0);
-}
-
+.sidebar.active { transform: translateX(0); }
 .sidebar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-    border-bottom: 1px solid var(--border-color);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 15px 20px; border-bottom: 1px solid var(--border-color);
 }
-
-.sidebar-header h3 {
-    font-size: 20px;
-    color: var(--primary-color);
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #aaa;
-}
-
-nav.sidebar ul {
+.sidebar-header h3 { font-size: 20px; color: var(--primary-color); }
+.close-btn { background: none; border: none; font-size: 28px; cursor: pointer; color: #aaa; }
+.sidebar ul { 
     list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav.sidebar ul li a {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
+    flex-direction: column;
+    height: calc(100% - 61px);
+}
+.sidebar ul li a {
+    display: flex; align-items: center; gap: 15px;
+    padding: 15px 20px; color: var(--text-color);
+    text-decoration: none; font-weight: 500;
     transition: background-color 0.2s;
 }
-
-nav.sidebar ul li a:hover {
-    background-color: #f1f1f1;
-}
-
-nav.sidebar ul li a.active {
-    background-color: var(--light-blue);
-    color: var(--primary-color);
+.sidebar ul li a:hover { background-color: #f1f1f1; }
+.sidebar ul li a.active {
+    background-color: var(--light-blue); color: var(--primary-color);
     font-weight: 700;
 }
+.sidebar ul li a i { width: 20px; text-align: center; }
 
-nav.sidebar ul li a i {
-    width: 20px;
-    text-align: center;
-}
+.logout-item { margin-top: auto; }
+.logout-item a { border-top: 1px solid var(--border-color); }
+.logout-item a:hover { background-color: #fff1f0; color: #cf1322; }
 
-/* --- OVERLAY --- */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    display: none;
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999; display: none;
 }
-
-.overlay.active {
-    display: block;
-}
-
-/* --- HEADER --- */
-header.admin-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px;
-    background-color: var(--white-color);
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.menu-icon {
-    font-size: 24px;
-    color: var(--primary-color);
-    cursor: pointer;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--text-color);
-    margin-left: 20px;
-}
-
-.logo img {
-    height: 30px;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-}
-
-.logout-btn {
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: none;
-}
+.overlay.active { display: block; }

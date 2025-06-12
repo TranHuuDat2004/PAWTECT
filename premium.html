@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám phá Premium - Pawtect</title>
+    <!-- Chúng ta sẽ dùng chung file CSS nhưng bạn có thể tách ra sau này -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+
+<body>
+    <!-- Placeholder cho sidebar của User -->
+    <div id="user-navbar-placeholder"></div>
+
+    <!-- Header dành cho User -->
+    <header class="user-header">
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div>
+            <a href="#" class="logo-link">
+                <div class="logo">
+                    <img src="/assets/images/logo.png" alt="Pawtect Logo">
+                    <span>Pawtect</span>
+                </div>
+            </a>
+        </div>
+        <div class="user-greeting">
+            <span>chào buổi sáng <strong>user!</strong></span>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+    <!-- Nội dung chính của trang -->
+    <main class="container-user">
+        <div class="page-header-user">
+            <a href="#" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
+            <h2>Khám phá Premium</h2>
+        </div>
+
+        <section class="premium-container">
+            <!-- Card Premium 1 -->
+            <div class="premium-card">
+                <h3>Gói Premium</h3>
+                <div class="price">50.000 VND</div>
+                <p class="description">Một trải nghiệm tốt hơn khi sử dụng Pawtect!</p>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Không quảng cáo</li>
+                    <li><i class="fas fa-check-circle"></i> Miễn phí kết nối với thú y</li>
+                    <li><i class="fas fa-check-circle"></i> Ưu tiên xét duyệt bài đăng</li>
+                    <li><i class="fas fa-check-circle"></i> Ưu tiên xét duyệt nhận nuôi</li>
+                    <li><i class="fas fa-check-circle"></i> Không giới hạn bài đăng</li>
+                </ul>
+                <button class="btn-premium">Tham gia Premium ngay!</button>
+            </div>
+
+            <!-- Card Premium 2 (Sắp ra mắt) -->
+            <div class="premium-card">
+                <h3>Gói Premium Plus</h3>
+                <div class="price">Sắp ra mắt</div>
+                <p class="description">Hãy chờ đón những tính năng vượt trội của Premium Plus!</p>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Mọi quyền lợi của Gói Premium</li>
+                    <li><i class="fas fa-check-circle"></i> Hỗ trợ trực tuyến 24/7</li>
+                    <li><i class="fas fa-check-circle"></i> Huy hiệu người dùng đặc biệt</li>
+                    <li><i class="fas fa-check-circle"></i> Giảm giá các dịch vụ thú y</li>
+                </ul>
+                <button class="btn-premium" disabled>Chờ đón nhé!</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Nhúng file JS cho sidebar của user -->
+    <script src="assets/js/user-navbar.js"></script>
+</body>
+
+</html>

@@ -30,22 +30,9 @@
             <button type="submit"><i class="fas fa-search"></i></button> -->
     </header>
 
-    <!-- sidebar.ejs -->
 
-    <!-- sidebar.ejs -->
-    <nav class="sidebar" id="sidebar-nav">
-        <div class="sidebar-header">
-            <h3>Menu</h3>
-            <button class="close-btn" id="close-btn">×</button>
-        </div>
-        <ul>
-            <li><a href="pending.html"><i class="fas fa-clock"></i> Bài đăng chờ duyệt</a></li>
-            <li><a href="adoption.html"><i class="fas fa-file-alt"></i> Đơn nhận nuôi</a></li>
-            <li><a href="dashboard.html"><i class="fas fa-home"></i> Số liệu thống kê</a></li>
-            <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Quản lý thu chi</a></li>
-        </ul>
-    </nav>
-    <div class="overlay" id="overlay"></div>
+    <!-- sidebar.js -->
+    <div id="navbar-placeholder"></div>
 
     <!-- Nội dung chính của trang -->
     <main class="container single-column">
@@ -63,18 +50,19 @@
                 <i class="fas fa-caret-down"></i>
             </div>
         </div>
-        
+
         <!-- XÓA CÁC CARD CŨ VÀ ĐỂ TRỐNG CONTAINER NÀY -->
         <div class="approval-list" id="approval-list-container">
             <!-- JavaScript sẽ tự động chèn các bài đăng vào đây -->
         </div>
 
     </main>
-    
+
     <!-- THÊM FILE DATA.JS (PHẢI NẰM TRƯỚC ADMIN.JS) -->
-    <script src="/assets/js/data.js"></script> 
+    <script src="/assets/js/data.js"></script>
     <script src="/assets/js/admin.js"></script>
     <script src="/assets/js/pending.js"></script>
+    <script src="/assets/js/sidebar.js"></script>
 </body>
 
 </html>
