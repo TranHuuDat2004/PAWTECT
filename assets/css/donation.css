@@ -1,0 +1,315 @@
+/* =================================================== */
+/*             1. CÀI ĐẶT CHUNG & BIẾN                 */
+/* =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #00B2D9;
+    --dark-blue: #004F5D;
+    --light-color: #FFFFFF;
+    --dark-text-color: #333;
+    --bg-color: #F8F9FA;
+    --white-color: #FFFFFF;
+    --border-color: #DEE2E6;
+    --sidebar-width: 280px;
+    --border-radius-md: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =================================================== */
+/*                 2. HEADER & SIDEBAR                 */
+/* =================================================== */
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 35px;
+}
+
+.user-info {
+    margin-left: auto;
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.user-info span {
+    display: block;
+    color: #888;
+}
+
+.user-info a {
+    color: var(--primary-color);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 28px;
+    height: 28px;
+    margin-left: 8px;
+}
+
+nav.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white-color);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+nav.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header h3 {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+nav.sidebar ul {
+    list-style: none;
+}
+
+nav.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    color: var(--dark-text-color);
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+nav.sidebar ul li a:hover {
+    background-color: #f1f1f1;
+}
+
+nav.sidebar ul li a i {
+    width: 20px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* =================================================== */
+/*             3. NỘI DUNG TRANG ỦNG HỘ                */
+/* =================================================== */
+.main-page-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-navigation {
+    margin-bottom: 25px;
+}
+
+.back-link {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.main-page-content h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.your-donation-box {
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius-md);
+    padding: 25px;
+    margin-bottom: 40px;
+    background-color: var(--white-color);
+    text-align: center;
+}
+
+.your-donation-box h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-text-color);
+    margin-bottom: 10px;
+}
+
+.your-donation-box p {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem; /* Tăng kích thước chữ một chút */
+}
+
+/* THAY ĐỔI Ở ĐÂY: Style cho phần tổng tiền */
+.your-donation-box p strong {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--dark-blue);
+    margin-left: 10px;
+}
+
+.btn {
+    border: none;
+    padding: 15px 24px;
+    border-radius: var(--border-radius-md);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-dark {
+    background-color: var(--dark-blue);
+    color: var(--light-color);
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn-dark:disabled {
+    background-color: #A0A0A0;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.packages-section {
+    text-align: center;
+}
+
+.packages-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.donation-package {
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius-md);
+    padding: 20px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--white-color);
+}
+
+.donation-package:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 178, 217, 0.2);
+}
+
+.package-name {
+    display: block;
+    font-weight: 900;
+    color: var(--dark-blue);
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.package-amount {
+    font-size: 0.9rem;
+    color: var(--dark-text-color);
+}
+
+.donation-package.selected {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 178, 217, 0.4);
+}
+
+.donation-package.selected .package-name,
+.donation-package.selected .package-amount {
+    color: var(--light-color);
+}
+
+@media (max-width: 768px) {
+    header, .main-page-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .main-page-content h1 {
+        font-size: 1.8rem;
+    }
+}

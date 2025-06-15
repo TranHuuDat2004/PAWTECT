@@ -1,0 +1,166 @@
+/* =================================================== */
+/*             1. CÀI ĐẶT CHUNG & BIẾN                 */
+/* =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #00B2D9;
+    --white-color: #FFFFFF;
+    --bg-color: #F8F9FA;
+    --dark-text-color: #333;
+    --light-text-color: #888;
+    --border-color: #E0E0E0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =================================================== */
+/*             2. LAYOUT CHÍNH CỦA TRANG               */
+/* =================================================== */
+.main-page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.page-navigation {
+    margin-bottom: 20px;
+}
+
+.back-link {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* =================================================== */
+/*               3. THANH TÌM KIẾM & BỘ LỌC            */
+/* =================================================== */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.search-container input {
+    flex-grow: 1;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.filter-icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* =================================================== */
+/*               4. LƯỚI THÚ CƯNG & THẺ                */
+/* =================================================== */
+.pet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.pet-card {
+    background-color: var(--white-color);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pet-card img {
+    width: 100%;
+    height: 180px; /* Chiều cao cố định cho ảnh */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    display: block;
+}
+
+.pet-info {
+    padding: 15px;
+}
+
+.pet-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.pet-description {
+    font-size: 0.85rem;
+    color: var(--light-text-color);
+}
+
+/* =================================================== */
+/*                  5. NÚT ĐỌC THÊM                    */
+/* =================================================== */
+.load-more-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#load-more-btn {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 50px; /* Bo tròn hoàn toàn */
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#load-more-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* =================================================== */
+/*                  6. RESPONSIVE                      */
+/* =================================================== */
+@media (min-width: 992px) {
+    .main-page-container {
+        max-width: 1140px;
+    }
+    .pet-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}

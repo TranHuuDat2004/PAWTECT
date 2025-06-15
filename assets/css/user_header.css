@@ -1,0 +1,135 @@
+/* --- HEADER --- */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--white-color);
+}
+
+.menu-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 38px;
+}
+
+.user-info {
+    margin-left: auto;
+}
+
+.user-info a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-greeting {
+    text-align: right;
+}
+
+.user-greeting span {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.user-greeting .user-name {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.user-icon-shape {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* --- SIDEBAR --- */
+nav.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white-color);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+nav.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-header {
+    padding: 20px; /* Điều chỉnh padding */
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between; /* THAY ĐỔI: Đẩy logo và nút về 2 phía */
+    align-items: center;
+}
+
+.sidebar-header .logo-link img {
+    height: 35px;
+}
+
+/* THAY ĐỔI Ở ĐÂY: Thêm style cho nút đóng */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2.5rem; /* Kích thước phù hợp */
+    line-height: 1;
+    font-weight: 300; /* Nét mảnh cho thanh lịch */
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: var(--dark-text-color);
+}
+
+nav.sidebar ul {
+    list-style: none;
+    padding-top: 20px;
+}
+
+nav.sidebar ul li a {
+    display: block;
+    padding: 20px 30px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: background-color 0.2s;
+}
+
+nav.sidebar ul li a:hover {
+    background-color: #f0faff;
+}
+
+/* --- OVERLAY --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}

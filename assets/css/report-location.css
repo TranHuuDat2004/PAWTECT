@@ -1,0 +1,167 @@
+/* =================================================== */
+/*             1. CÀI ĐẶT CHUNG & BIẾN                 */
+/* =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #00B2D9;
+    --white-color: #FFFFFF;
+    --dark-text-color: #333;
+    --sidebar-width: 280px;
+    --border-color: #DEE2E6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    /* Nền xanh cho toàn bộ trang */
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =================================================== */
+/*                 2. HEADER & SIDEBAR                 */
+/* =================================================== */
+
+
+/* =================================================== */
+/*               3. NỘI DUNG TRANG BÁO CÁO             */
+/* =================================================== */
+.main-page-content.report-page {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-navigation {
+    margin-bottom: 25px;
+}
+
+.back-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+#reportForm {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* --- Các ô nhập liệu --- */
+.location-input-wrapper {
+    position: relative;
+}
+
+#location, #description {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--white-color);
+    color: var(--dark-text-color);
+}
+#location {
+    padding-right: 50px; /* Chừa chỗ cho icon mũi tên */
+}
+
+.location-input-wrapper i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.form-helper-text {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* --- Hộp tải ảnh --- */
+.image-upload-box {
+    width: 100%;
+    min-height: 250px;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden; /* Ẩn phần thừa của ảnh preview */
+    position: relative;
+}
+
+#upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #a0a0a0;
+    font-size: 1rem;
+}
+
+#upload-placeholder i {
+    color: var(--primary-color);
+}
+
+/* Ẩn input file mặc định */
+input[type="file"] {
+    display: none;
+}
+
+#image-preview {
+    display: none; /* Ban đầu ẩn đi */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* --- Nút bấm --- */
+.btn-submit {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    padding: 16px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    header { padding: 15px; }
+    h1 { font-size: 2rem; }
+}
