@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link đến file CSS riêng của trang này -->
+    <link rel="stylesheet" href="assets/css/find_friends.css">
+    <link rel="stylesheet" href="assets/css/user_header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>Tìm bạn đồng hành - Pawtect</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <a href="home.html" class="logo-link">
+            <div class="logo">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </div>
+        </a>
+        
+        <div class="user-info">
+            <a href="#">
+                <div class="user-greeting">
+                    <span>chào buổi sáng</span>
+                    <strong class="user-name">user!</strong>
+                </div>
+                <i class="fas fa-user user-icon-shape"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar-nav">
+        <div class="sidebar-header">
+            <a href="home.html" class="logo-link">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </a>
+            <!-- THAY ĐỔI Ở ĐÂY: Thêm lại nút đóng -->
+            <button class="close-btn" id="close-btn">×</button>
+        </div>
+        <ul>
+            <li><a href="donation.html">Ủng hộ quỹ Pawtect</a></li>
+            <li><a href="report-location.html">Báo cáo cứu hộ</a></li>
+            <li><a href="find_friends.html">Tìm bạn đồng hành</a></li>
+            <li><a href="premium.html">Khám phá premium</a></li>
+            <li><a href="vets.html">Kết nối với Thú y</a></li>
+            <li><a href="user.html">Bài đăng của tôi</a></li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="main-page-container">
+        <main>
+            <div class="page-navigation">
+                <a href="home.html" class="back-link">
+                    ← Tìm bạn đồng hành
+                </a>
+            </div>
+
+            <div class="search-container">
+                <input type="text" placeholder="Tìm kiếm...">
+                <i class="fas fa-sliders-h filter-icon"></i>
+            </div>
+
+            <div class="pet-grid" id="pet-grid">
+                <!-- 6 thẻ thú cưng ban đầu -->
+                <div class="pet-card">
+                    <img src="https://i.imgur.com/4mJ5Yyv.jpg" alt="Ảnh của một chú mèo mướp">
+                    <div class="pet-info">
+                        <span class="pet-name">Tigger</span>
+                        <p class="pet-description">Thích quấn chủ, thích gà luộc</p>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="https://i.imgur.com/S6b402s.jpg" alt="Ảnh của một chú chó socola">
+                    <div class="pet-info">
+                        <span class="pet-name">Coco</span>
+                        <p class="pet-description">Năng động, thích đi dạo</p>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="https://i.imgur.com/sC5I1Tu.jpg" alt="Ảnh của một chú mèo đang cười">
+                    <div class="pet-info">
+                        <span class="pet-name">Milo</span>
+                        <p class="pet-description">Hài hước, hay làm trò</p>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="https://i.imgur.com/GscsE5y.jpg" alt="Ảnh của một chú mèo mướp khác">
+                    <div class="pet-info">
+                        <span class="pet-name">Simba</span>
+                        <p class="pet-description">Hiền lành, thích sưởi nắng</p>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="https://i.imgur.com/0f6d3Rj.jpg" alt="Ảnh của một chú chó poodle">
+                    <div class="pet-info">
+                        <span class="pet-name">Goldie</span>
+                        <p class="pet-description">Thông minh, dễ huấn luyện</p>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="https://i.imgur.com/JJEiT1T.jpg" alt="Ảnh của một chú thỏ">
+                    <div class="pet-info">
+                        <span class="pet-name">Thumper</span>
+                        <p class="pet-description">Nhút nhát nhưng rất đáng yêu</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more-container">
+                <button id="load-more-btn">Đọc thêm</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/find_friends.js"></script>
+    <script src="assets/js/user-navbar.js"></script>
+</body>
+</html>

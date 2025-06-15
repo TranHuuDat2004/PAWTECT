@@ -27,91 +27,7 @@ body {
     color: var(--text-color);
 }
 
-/* --- 1. THANH MENU TRƯỢT (SIDEBAR) --- */
-/* Chỉ áp dụng cho thẻ NAV */
-nav.sidebar {
-    width: var(--sidebar-width);
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: var(--white-color);
-    z-index: 1000;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-}
 
-nav.sidebar.active {
-    transform: translateX(0);
-    color:#00AEDD;
-}
-
-.sidebar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.sidebar-header h3 {
-    font-size: 20px;
-    color: var(--primary-color);
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #aaa;
-}
-
-nav.sidebar ul {
-    list-style: none;
-}
-
-nav.sidebar ul li a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.2s;
-}
-
-nav.sidebar ul li a:hover {
-    background-color: #f1f1f1;
-}
-
-nav.sidebar ul li a.active {
-    background-color: var(--light-blue);
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-nav.sidebar ul li a i {
-    width: 20px;
-    text-align: center;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    display: none;
-}
-
-.overlay.active {
-    display: block;
-}
 
 /* --- 2. HEADER CHÍNH --- */
 header {
@@ -658,27 +574,3 @@ header {
 
 }
 
-/* --- STYLE CHO NÚT ĐĂNG XUẤT TRONG SIDEBAR --- */
-
-/* Biến ul thành flex container để đẩy nút logout xuống dưới */
-nav.sidebar ul {
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 61px); /* Chiều cao ul = 100% sidebar - chiều cao header của sidebar */
-}
-
-/* Đẩy mục logout xuống dưới cùng */
-.logout-item {
-    margin-top: auto;
-}
-
-/* Tạo đường kẻ ngang phía trên để tách biệt */
-.logout-item a {
-    border-top: 1px solid var(--border-color);
-}
-
-/* Đổi màu khi hover để báo hiệu hành động nguy hiểm/quan trọng */
-.logout-item a:hover {
-    background-color: #fff1f0; /* Màu đỏ rất nhạt */
-    color: #cf1322; /* Màu đỏ đậm */
-}

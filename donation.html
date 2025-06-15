@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ủng hộ Pawtect</title>
+    <!-- Link đến file CSS riêng của trang này -->
+    <link rel="stylesheet" href="assets/css/donation.css">
+    <link rel="stylesheet" href="assets/css/user_header.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <a href="home.html" class="logo-link">
+            <div class="logo">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </div>
+        </a>
+        
+        <div class="user-info">
+            <a href="#">
+                <div class="user-greeting">
+                    <span>chào buổi sáng</span>
+                    <strong class="user-name">user!</strong>
+                </div>
+                <i class="fas fa-user user-icon-shape"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar-nav">
+        <div class="sidebar-header">
+            <a href="home.html" class="logo-link">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </a>
+            <!-- THAY ĐỔI Ở ĐÂY: Thêm lại nút đóng -->
+            <button class="close-btn" id="close-btn">×</button>
+        </div>
+        <ul>
+            <li><a href="donation.html">Ủng hộ quỹ Pawtect</a></li>
+            <li><a href="report-location.html">Báo cáo cứu hộ</a></li>
+            <li><a href="find_friends.html">Tìm bạn đồng hành</a></li>
+            <li><a href="premium.html">Khám phá premium</a></li>
+            <li><a href="vets.html">Kết nối với Thú y</a></li>
+            <li><a href="user.html">Bài đăng của tôi</a></li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- MAIN PAGE CONTENT WRAPPER -->
+    <div class="main-page-content">
+        <main>
+            <div class="page-navigation">
+                <a href="home.html" class="back-link">
+                    ← Các gói ủng hộ
+                </a>
+            </div>
+
+            <h1>Hãy ủng hộ PAWTECT!</h1>
+
+            <section class="your-donation-box">
+                <h3>ỦNG HỘ TỪ BẠN</h3>
+                <p id="donation-message">Bạn chưa chọn gói ủng hộ nào, hãy ủng hộ ngay!</p>
+                <button id="checkout-button" class="btn btn-dark" disabled>Thanh toán</button>
+            </section>
+
+            <section class="packages-section">
+                <h2>Các gói ủng hộ</h2>
+                <div class="package-grid">
+                    <div class="donation-package" data-name="GÓI MẴM MẴM" data-amount="50.000VND">
+                        <span class="package-name">GÓI MẴM MẴM</span>
+                        <span class="package-amount">50.000VND</span>
+                    </div>
+                    <div class="donation-package" data-name="GÓI CĂNG TRÒN" data-amount="100.000VND">
+                        <span class="package-name">GÓI CĂNG TRÒN</span>
+                        <span class="package-amount">100.000VND</span>
+                    </div>
+                    <div class="donation-package" data-name="GÓI XINH IU" data-amount="250.000VND">
+                        <span class="package-name">GÓI XINH IU</span>
+                        <span class="package-amount">250.000VND</span>
+                    </div>
+                    <div class="donation-package" data-name="GÓI MẬP MẠP" data-amount="500.000VND">
+                        <span class="package-name">GÓI MẬP MẠP</span>
+                        <span class="package-amount">500.000VND</span>
+                    </div>
+                    <div class="donation-package" data-name="GÓI BỒNG BỀNH" data-amount="800.000VND">
+                        <span class="package-name">GÓI BỒNG BỀNH</span>
+                        <span class="package-amount">800.000VND</span>
+                    </div>
+                    <div class="donation-package" data-name="GÓI XỊN MỊN" data-amount="1.200.000VND">
+                        <span class="package-name">GÓI XỊN MỊN</span>
+                        <span class="package-amount">1.200.000VND</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/user-donation.js"></script>
+</body>
+</html>

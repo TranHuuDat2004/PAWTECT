@@ -1,24 +1,20 @@
 // assets/js/navbar.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. ĐỊNH NGHĨA HTML CỦA SIDEBAR (ĐÃ THÊM NÚT ĐĂNG XUẤT)
+    // 1. HTML sidebar đơn giản THEO Ý BẠN CỦA BẠN
     const sidebarHTML = `
-        <nav class="sidebar" id="sidebar-nav">
+        <nav class="sidebar simple-sidebar" id="sidebar-nav">
             <div class="sidebar-header">
                 <h3>Menu</h3>
                 <button class="close-btn" id="close-btn">×</button>
             </div>
             <ul>
-                <li><a href="pending.html"><i class="fas fa-clock"></i> Bài đăng chờ duyệt</a></li>
-                <li><a href="adoption.html"><i class="fas fa-file-alt"></i> Đơn nhận nuôi</a></li>
-                <li><a href="dashboard.html"><i class="fas fa-home"></i> Số liệu thống kê</a></li>
-                <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Quản lý thu chi</a></li>
-                
-                <!-- NÚT ĐĂNG XUẤT ĐƯỢC THÊM VÀO ĐÂY -->
+                <li><a href="pending.html">Bài đăng chờ duyệt</a></li>
+                <li><a href="adoption.html">Đơn nhận nuôi</a></li>
+                <li><a href="dashboard.html">Số liệu thống kê</a></li>
+                <li><a href="donations.html">Quản lý thu chi</a></li>
                 <li class="logout-item">
-                    <a href="#" id="logout-button">
-                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
-                    </a>
+                    <a href="login.html" id="logout-button">Đăng xuất</a>
                 </li>
             </ul>
         </nav>

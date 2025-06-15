@@ -1,6 +1,6 @@
-/* assets/css/sidebar.css */
+/* assets/css/sidebar.css (PHIÊN BẢN MỚI) */
 
-/* --- CẤU TRÚC CHUNG & SIDEBAR --- */
+/* --- CẤU TRÚC CHUNG CỦA SIDEBAR --- */
 .sidebar {
     width: 280px;
     height: 100vh;
@@ -11,37 +11,97 @@
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     box-shadow: 2px 0 15px rgba(0,0,0,0.1);
-}
-.sidebar.active { transform: translateX(0); }
-.sidebar-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 15px 20px; border-bottom: 1px solid var(--border-color);
-}
-.sidebar-header h3 { font-size: 20px; color: var(--primary-color); }
-.close-btn { background: none; border: none; font-size: 28px; cursor: pointer; color: #aaa; }
-.sidebar ul { 
-    list-style: none;
     display: flex;
     flex-direction: column;
-    height: calc(100% - 61px);
 }
+
+.sidebar.active { 
+    transform: translateX(0); 
+}
+
+/* Header của Sidebar */
+.sidebar-header {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 15px 20px; 
+    flex-shrink: 0;
+}
+.sidebar-header h3 { 
+    font-size: 24px; 
+    font-weight: 700;
+    color: var(--primary-color); /* Chữ "Menu" màu xanh */
+    margin: 0;
+}
+/* Style cho logo trong header của user sidebar */
+.sidebar-header img {
+    height: 30px;
+}
+.close-btn { 
+    background: none; 
+    border: none; 
+    font-size: 28px; 
+    cursor: pointer; 
+    color: #aaa;
+    line-height: 1;
+}
+
+/* Danh sách các mục menu */
+.sidebar ul { 
+    list-style: none;
+    padding: 10px 0; /* Thêm chút padding trên dưới cho thoáng */
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- ĐÂY LÀ PHẦN THAY ĐỔI QUAN TRỌNG NHẤT --- */
+
+/* Style mặc định cho TẤT CẢ các link menu */
 .sidebar ul li a {
-    display: flex; align-items: center; gap: 15px;
-    padding: 15px 20px; color: var(--text-color);
-    text-decoration: none; font-weight: 500;
+    display: block;
+    padding: 20px 30px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.3rem;
     transition: background-color 0.2s;
 }
-.sidebar ul li a:hover { background-color: #f1f1f1; }
-.sidebar ul li a.active {
-    background-color: var(--light-blue); color: var(--primary-color);
-    font-weight: 700;
+
+/* Style khi HOVER một mục */
+.sidebar ul li a:hover {
+    background-color: #f0f0f0; /* Nền xám rất nhạt khi di chuột vào */
 }
-.sidebar ul li a i { width: 20px; text-align: center; }
 
-.logout-item { margin-top: auto; }
-.logout-item a { border-top: 1px solid var(--border-color); }
-.logout-item a:hover { background-color: #fff1f0; color: #cf1322; }
+/* Style khi một mục đang ACTIVE */
+.sidebar ul li a.active {
+    background-color: #dbdbdb; /* Nền xám nhẹ như bạn muốn */
+    font-weight: 700; /* In đậm chữ khi active */
+    color: var(--primary-color); /* Vẫn giữ chữ màu xanh */
+}
 
+
+/* Mục Đăng xuất */
+.logout-item { 
+    margin-top: auto; 
+    padding: 10px; /* Thêm padding cho vùng logout */
+    border-top: 1px solid var(--border-color); /* Thêm đường kẻ ngang */
+}
+/* Nút đăng xuất sẽ không có background khi active/hover */
+.logout-item a,
+.logout-item a:hover,
+.logout-item a.active { 
+    background-color: transparent;
+    color: #555; /* Màu chữ hơi tối hơn cho khác biệt */
+    font-weight: 500;
+}
+.logout-item a:hover {
+    color: #e5383b; /* Chuyển sang màu đỏ khi hover để báo hiệu */
+}
+
+
+/* Overlay */
 .overlay {
     position: fixed; top: 0; left: 0;
     width: 100%; height: 100%;
@@ -49,3 +109,28 @@
     z-index: 999; display: none;
 }
 .overlay.active { display: block; }
+
+/* --- STYLE CHO NÚT ĐĂNG XUẤT TRONG SIDEBAR --- */
+
+/* Biến ul thành flex container để đẩy nút logout xuống dưới */
+nav.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 61px); /* Chiều cao ul = 100% sidebar - chiều cao header của sidebar */
+}
+
+/* Đẩy mục logout xuống dưới cùng */
+.logout-item {
+    margin-top: auto;
+}
+
+/* Tạo đường kẻ ngang phía trên để tách biệt */
+.logout-item a {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Đổi màu khi hover để báo hiệu hành động nguy hiểm/quan trọng */
+.logout-item a:hover {
+    background-color: #fff1f0; /* Màu đỏ rất nhạt */
+    color: #cf1322; /* Màu đỏ đậm */
+}
