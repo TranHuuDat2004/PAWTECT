@@ -7,7 +7,8 @@
     <title>Quản lý thu chi - Dashboard Pawtect</title>
     <link rel="stylesheet" href="../assets/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+</head>
 </head>
 
 <body>
@@ -19,14 +20,27 @@
         <div>
             <a href="dashboard.html" class="logo-link">
                 <div class="logo">
-                    <img src="/assets/images/logo.png" alt="Pawtect Logo">
-                    <span>Pawtect</span>
+                    <img src="../assets/images/header_logo.png" alt="Pawtect Logo">
                 </div>
             </a>
         </div>
     </header>
     <!-- sidebar.js -->
     <div id="navbar-placeholder"></div>
+    <nav class="sidebar" id="sidebar-nav">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-user fa-2xl"></i>
+            <h3>Menu</h3>
+            <button class="close-btn" id="close-btn">x</button>
+        </div>
+        <ul>
+            <li><a href="pending.html"><i class="fas fa-clock"></i> Bài đăng chờ duyệt</a></li>
+            <li><a href="adoption.html"><i class="fas fa-file-alt"></i> Đơn nhận nuôi</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Số liệu thống kê</a></li>
+            <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Quản lý thu chi</a></li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
 
     <!-- Main Content -->
     <main class="container single-column">
@@ -53,10 +67,10 @@
     </main>
 
     <!-- THAY ĐỔI Ở ĐÂY: Nhúng các file JS cần thiết -->
-    <script src="/assets/js/data-donation.js"></script>
-    <script src="/assets/js/admin.js"></script>
-    <script src="/assets/js/donation.js"></script>
-    <script src="/assets/js/sidebar.js"></script>
+    <script src="..../assets/js/data-donation.js"></script>
+    <script src="..../assets/js/admin.js"></script>
+    <script src="..../assets/js/donation.js"></script>
+    <script src="..../assets/js/sidebar.js"></script>
 </body>
 
 </html>
